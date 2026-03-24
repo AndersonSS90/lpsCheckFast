@@ -1,0 +1,154 @@
+*{margin:0;padding:0;box-sizing:border-box;}
+
+:root{
+--amarelo-claro:#fbb103;
+--amarelo-escuro:#d58512;
+--preto:#001318;
+--branco:#ffffff;
+--cinza:#dbdbdb;
+--fonte-principal:"Inter", system-ui, sans-serif;
+}
+
+html{
+ scroll-behavior: smooth;
+}
+
+body{font-family:var(--fonte-principal);background:var(--preto);line-height:1.5;}
+
+img{max-width:100%;display:block;}
+
+.header{height:100px;display:flex;align-items:center;gap:20px;padding:0 10%;background:var(--preto);}
+.header__logo{height:60px;}
+.header__cidade{font-size:40px;font-style:italic;color:var(--amarelo-escuro);}
+
+.section{padding:80px 20px;}
+
+.intro{background:url("./background.jpg") center left / cover no-repeat;display:flex;align-items:center;justify-content:flex-start;text-align:justify;height:800px;padding-left:10%;position:relative;}
+.intro::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,0.4);}
+.intro__texto{max-width:750px;font-size:24px;color:white;}
+.intro__container{display:flex;flex-direction:column;align-items:flex-start;gap:30px;position:relative;z-index:2;}
+.intro__botoes{display:flex;gap:15px;flex-wrap:wrap;}
+.btn-intro{background:var(--amarelo-claro);color:var(--preto);padding:14px 22px;border-radius:6px;text-decoration:none;font-weight:bold;transition:.2s;}
+.btn-intro:hover{background:var(--amarelo-escuro);transform:translateY(-2px);}
+.btn-intro--outline{background:transparent;border:2px solid var(--amarelo-claro);color:white;}
+.btn-intro--outline:hover{background:var(--amarelo-claro);color:var(--preto);}
+
+.section-title{background:var(--amarelo-claro);height:100px;display:flex;align-items:center;justify-content:center;font-size:40px;font-weight:bold;}
+
+.servicos{background:var(--branco);}
+.servicos__lista{max-width:1100px;margin:auto;display:flex;flex-direction:column;gap:80px;padding:60px 20px;}
+.servico-item{display:flex;align-items:center;gap:40px;}
+.servico-item.reverse{flex-direction:row-reverse;}
+.servico-texto{flex:1;display:flex;flex-direction:column;gap:20px;text-align:justify;}
+.servico-imagem{flex:1;max-width:450px;height:280px;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.servico-imagem img{width:100%;height:100%;object-fit:cover;border-radius:8px;}
+
+.card__titulo{font-size:24px;text-align:center;}
+.card__texto{font-size:18px;}
+
+.botoes-servico{display:flex;gap:12px;flex-wrap:wrap;}
+
+.card__botao{background:var(--amarelo-claro);color:var(--preto);text-decoration:none;font-weight:bold;padding:12px 20px;border-radius:6px;transition:.2s;cursor:pointer;}
+.card__botao:hover{background:var(--amarelo-escuro);transform:translateY(-2px);}
+
+.cta-botao{background:var(--preto);color:var(--branco);border:2px solid var(--amarelo-claro);}
+.cta-botao:hover{background:var(--amarelo-claro);color:var(--preto);}
+
+.modal{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);display:none;align-items:center;justify-content:center;z-index:999;}
+.modal-content{background:white;padding:30px;border-radius:10px;max-width:500px;width:90%;height:520px;display:flex;flex-direction:column;position:relative;}
+.modal-body{flex:1;overflow-y:auto;margin-bottom:20px;padding-right:5px;white-space:pre-line;}
+.modal-footer{display:flex;justify-content:center;gap:20px;}
+.close{position:absolute;top:10px;right:15px;cursor:pointer;font-size:22px;}
+.etapa-numero{width:50px;height:50px;border-radius:50%;background:#fbb103;display:flex;align-items:center;justify-content:center;font-weight:bold;margin:auto;margin-bottom:20px;}
+.nav-btn{background:#fbb103;border:none;width:40px;height:40px;border-radius:50%;cursor:pointer;}
+.modal-body::-webkit-scrollbar{width:6px;}
+.modal-body::-webkit-scrollbar-thumb{background:#fbb103;border-radius:10px;}
+
+.vantagens{background:var(--cinza);text-align:center;}
+.vantagens__titulo{font-size:32px;margin-bottom:10px;}
+.vantagens__subtitulo{max-width:700px;margin:0 auto 60px auto;color:#666;font-size:15px;}
+.vantagens__lista{display:grid;grid-template-columns: repeat(3, 1fr);gap:40px;max-width:1000px;margin:auto;}
+.vantagem{max-width:300px;}
+.vantagem__icone{font-size:40px;color:#f4b400;margin-bottom:20px;}
+
+.depoimentos{background:#f5f5f5;}
+.depoimentos__container{max-width:1100px;margin:auto;}
+.depoimentos__titulo{text-align:center;font-size:28px;margin-bottom:40px;}
+.depoimento{display:flex;align-items:center;gap:40px;justify-content:center;flex-wrap:wrap;}
+.depoimento video{width:100%;max-width:500px;height:auto;aspect-ratio:16/9;object-fit:contain;border-radius:6px;}
+.depoimento__texto{max-width:400px;color:#666;}
+.depoimento__cliente{margin-top:15px;font-weight:bold;}
+.seta{font-size:30px;cursor:pointer;color:#999;}
+
+.contatos{background:var(--amarelo-escuro);color:white;padding:20px 0;}
+.contatos__container{max-width:1100px;margin:auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;}
+.contato-item{display:flex;flex-direction:column;gap:5px;font-size:14px;}
+
+.form-section{background: linear-gradient(135deg, #fbb103, #d58512);}
+.form-title{flex-direction:column;height:auto;padding:25px 20px;text-align:center;}
+.form-title h2{font-size:32px;margin-bottom:8px;}
+.form-title p{font-size:16px;font-weight:normal;}
+.form-container{max-width:520px;margin:60px auto;background:#fff;padding:30px;border-radius:16px;box-shadow:0 10px 40px rgba(0,0,0,0.2);position:relative;}
+.form-headline{text-align:center;margin-bottom:20px;}
+.form-headline h2{font-size:20px;font-weight:600;}
+.form-headline p{font-size:14px;color:#666;}
+.form-benefits{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:10px;}
+.form-benefits span{background:#f5f5f5;padding:6px 10px;border-radius:6px;font-size:12px;}
+.form-container input,.form-container select{width:100%;padding:14px;margin-top:12px;border-radius:8px;border:1px solid #ddd;font-size:14px;transition:0.2s;}
+.form-container input:focus,.form-container select:focus{border-color:#fbb103;outline:none;box-shadow:0 0 0 2px rgba(251,177,3,0.2);}
+.form-container button{width:100%;padding:16px;margin-top:20px;background:#001318;color:#fff;border:none;border-radius:8px;font-size:16px;font-weight:bold;cursor:pointer;transition:.2s;}
+.form-container button:hover{background:#000;transform:translateY(-2px);}
+.form-alerta{background:#fff3cd;border:1px solid #ffeeba;padding:10px;border-radius:6px;font-size:13px;margin-bottom:10px;text-align:center;}
+
+.contato-item a{color:white;text-decoration:none;font-weight:bold;transition:0.2s;}
+.contato-item a:hover{text-decoration:underline;opacity:0.8;}
+
+.footer{background:var(--preto);color:white;text-align:center;padding:20px;}
+
+/* =========================
+ RESPONSIVO
+========================= */
+
+/* TABLET */
+@media (max-width: 1024px){
+  .header{padding: 0 20px;}
+  .header__cidade{font-size:28px;}
+  .intro{height:auto;padding:80px 20px;justify-content:center;text-align:left;}
+  .intro__texto{font-size:20px;}
+  .servico-item{flex-direction:column;text-align:center;}
+  .servico-item.reverse{flex-direction:column;}
+  .servico-imagem{max-width:100%;height:auto;}
+  .vantagens__lista{grid-template-columns: repeat(2, 1fr);}
+  .depoimento video{width:100%;height:auto;}
+}
+
+/* MOBILE */
+@media (max-width: 768px){
+  .header{flex-direction:column;height:auto;padding:15px;text-align:center;}
+  .header__logo{height:50px;}
+  .header__cidade{font-size:24px;}
+  .section{padding:60px 15px;}
+  .section-title{font-size:26px;height:auto;padding:20px;text-align:center;}
+  .intro{padding:60px 15px;}
+  .intro__texto{font-size:18px;}
+  .intro__botoes{flex-direction:column;width:100%;}
+  .btn-intro{width:100%;text-align:center;}
+  .servicos__lista{gap:50px;padding:40px 10px;}
+  .card__titulo{font-size:20px;}
+  .card__texto{font-size:16px;}
+  .botoes-servico{justify-content:center;}
+  .vantagens__lista{grid-template-columns: 1fr;gap:30px;}
+  .vantagem{max-width:100%;}
+  .depoimento{flex-direction:column;}
+  .depoimento__texto{text-align:center;}
+  .contatos__container{flex-direction:column;text-align:center;}
+  .form-container{margin:30px 10px;padding:20px;}
+}
+
+/* MOBILE PEQUENO */
+@media (max-width: 480px){
+  .intro__texto{font-size:16px;}
+  .form-headline h2{font-size:18px;}
+  .form-title h2{font-size:24px;}
+  .form-title p{font-size:14px;}
+}
