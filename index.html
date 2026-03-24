@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CheckFast</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<link rel="stylesheet" href="./style.css">
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KMRX4K94');</script>
+<!-- End Google Tag Manager -->
+
+</head>
+
+<body>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KMRX4K94"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<header class="header">
+<img src="./logo.png" class="header__logo">
+<p class="header__cidade">Porto Alegre</p>
+</header>
+
+<section class="intro section">
+  <div class="intro__container">
+
+    <p class="intro__texto">
+      A CheckFast ajuda você a comprar ou vender um veículo com muito mais segurança. 
+      Com consultas completas e vistorias especializadas, oferecemos informações claras 
+      e confiáveis para evitar surpresas e trazer mais tranquilidade para cada negociação.
+    </p>
+
+    <div class="intro__botoes">
+      <a href="#servicos" class="btn-intro">Ver serviços</a>
+      <a href="#form-vistoria" class="btn-intro btn-intro--outline">Quero analisar meu veículo</a>
+    </div>
+
+  </div>
+</section>
+
+<section class="servicos" id="servicos">
+<div class="section-title">Nossos Serviços</div>
+
+<div class="servicos__lista">
+
+<div class="servico-item">
+<div class="servico-texto">
+<h3 class="card__titulo">Consulta de Histórico Veicular</h3>
+<p class="card__texto">A Consulta de Histórico Veicular reúne dados essenciais sobre o passado do veículo: multas, restrições, registro de roubo ou furto, passagem por leilão, possíveis acidentes, alienação e valor na Tabela FIPE. É o primeiro passo para avaliar riscos e comprar com mais segurança.</p>
+<div class="botoes-servico">
+<a onclick="abrirModal('consulta')" class="card__botao">Saiba Mais</a>
+<a href="#form-vistoria" class="card__botao cta-botao" data-servico="ConsultaAte100k">Descobrir histórico do veículo</a>
+</div>
+</div>
+<div class="servico-imagem">
+<img src="./consultaveicular.png">
+</div>
+</div>
+
+<div class="servico-item reverse">
+<div class="servico-texto">
+<h3 class="card__titulo">Vistoria Cautelar Básica</h3>
+<p class="card__texto">A Vistoria Cautelar Básica vai além do histórico e analisa a identificação e estrutura do veículo. São verificados chassi, motor, vidros, airbags, freios e indícios de sinistros, leilões ou restrições, gerando um laudo fotográfico que aumenta a segurança na compra ou venda.</p>
+<div class="botoes-servico">
+<a onclick="abrirModal('cautelar')" class="card__botao">Saiba Mais</a>
+<a href="#form-vistoria" class="card__botao cta-botao" data-servico="VistoriaBasica">Quero avaliar esse carro</a>
+</div>
+</div>
+<div class="servico-imagem">
+<img src="./vistoriabasica.jpeg">
+</div>
+</div>
+
+<div class="servico-item">
+<div class="servico-texto">
+<h3 class="card__titulo">Vistoria Cautelar Completa</h3>
+<p class="card__texto">A Vistoria Cautelar Completa inclui tudo da vistoria básica e acrescenta análise detalhada da pintura e da carroceria. O processo identifica retoques, repinturas ou reparos estruturais, oferecendo um diagnóstico mais profundo e máxima transparência na negociação do veículo.</p>
+<div class="botoes-servico">
+<a onclick="abrirModal('completa')" class="card__botao">Saiba Mais</a>
+<a href="#form-vistoria" class="card__botao cta-botao" data-servico="VistoriaCompleta">Descobrir tudo antes de comprar</a>
+</div>
+</div>
+<div class="servico-imagem">
+<img src="./vistoriacompleta.jpeg">
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+<div class="modal-content">
+
+<span class="close" onclick="fecharModal()">&times;</span>
+
+<div class="modal-body">
+<div class="etapa-numero" id="numeroEtapa"></div>
+<h3 id="tituloEtapa"></h3>
+<p id="textoEtapa"></p>
+</div>
+
+<div class="modal-footer">
+<button class="nav-btn" onclick="mudarEtapa(-1)">
+<i class="fa-solid fa-chevron-left"></i>
+</button>
+<button class="nav-btn" onclick="mudarEtapa(1)">
+<i class="fa-solid fa-chevron-right"></i>
+</button>
+</div>
+
+</div>
+</div>
+
+<section class="vantagens section">
+<h2 class="vantagens__titulo">POR QUE ESCOLHER A CHECKFAST?</h2>
+<p class="vantagens__subtitulo">
+Aqui você não compra um carro no escuro. Você toma decisão com informação.
+</p>
+
+<div class="vantagens__lista">
+
+<div class="vantagem">
+<div class="vantagem__icone"><i class="fas fa-shield-alt"></i></div>
+<h3>MAIS SEGURANÇA NA COMPRA</h3>
+<p>Você evita cair em golpes, comprar carro com problema oculto ou assumir prejuízos que não são seus.</p>
+</div>
+
+<div class="vantagem">
+<div class="vantagem__icone"><i class="fas fa-search"></i></div>
+<h3>TRANSPARÊNCIA TOTAL</h3>
+<p>Mostramos o que realmente aconteceu com o veículo — histórico, estrutura e sinais que muita gente tenta esconder.</p>
+</div>
+
+<div class="vantagem">
+<div class="vantagem__icone"><i class="fas fa-bolt"></i></div>
+<h3>AGILIDADE NO ATENDIMENTO</h3>
+<p>Atendimento rápido e direto, sem enrolação. Você recebe as informações que precisa pra decidir com confiança.</p>
+</div>
+
+<div class="vantagem">
+<div class="vantagem__icone"><i class="fas fa-map-marker-alt"></i></div>
+<h3>ATENDEMOS ONDE VOCÊ ESTIVER</h3>
+<p>Vamos até você na região de Porto Alegre e arredores, facilitando todo o processo.</p>
+</div>
+
+<div class="vantagem">
+<div class="vantagem__icone"><i class="fas fa-dollar-sign"></i></div>
+<h3>INVESTIMENTO QUE EVITA PREJUÍZO</h3>
+<p>Uma vistoria preventiva garante uma decisão mais segura hoje e evita prejuízos futuros.</p>
+</div>
+
+<div class="vantagem">
+<div class="vantagem__icone"><i class="fas fa-user-check"></i></div>
+<h3>ESPECIALISTAS EM VISTORIA</h3>
+<p>Equipe técnica preparada para identificar detalhes que passam despercebidos por quem não é da área.</p>
+</div>
+
+</div>
+</section>
+<section class="depoimentos section">
+<div class="depoimentos__container">
+<h2 class="depoimentos__titulo">Histórias de quem já passou por aqui</h2>
+
+<div class="depoimento">
+<div class="seta" onclick="trocarDepoimento(-1)">❮</div>
+
+<div id="midiaDepoimento"></div>
+
+<div class="depoimento__texto">
+<p id="textoDepoimento"></p>
+<div class="depoimento__cliente" id="clienteDepoimento"></div>
+</div>
+
+<div class="seta" onclick="trocarDepoimento(1)">❯</div>
+</div>
+
+</div>
+</section>
+
+<section class="form-section section">
+
+<div class="section-title form-title">
+  <h2>Evite prejuízo antes de comprar</h2>
+  <p>Descubra problemas ocultos e negocie com segurança</p>
+</div>
+
+<div class="form-container" id="form-vistoria">
+
+<div class="form-headline">
+
+  <h2>Receba uma análise antes de fechar negócio</h2>
+  <p>Leva menos de 30 segundos. Nossa equipe te chama no WhatsApp.</p>
+
+  <div class="form-benefits">
+    <span>✔ Atendimento rápido</span>
+    <span>✔ Sem compromisso</span>
+    <span>✔ Evite golpes e prejuízos</span>
+  </div>
+
+</div>
+
+<form id="formVistoria">
+
+<div class="form-alerta">
+⚠️ Mais de 30% dos veículos possuem problemas não visíveis — Não arrisque e faça a verificação antes da compra.
+</div>
+
+<input type="text" id="nome" placeholder="Seu nome completo" required>
+<input type="tel" id="telefone" placeholder="WhatsApp para contato rápido" required>
+<input type="email" id="email" placeholder="Seu melhor e-mail" required>
+<input type="text" id="placa" placeholder="Placa (ex: ABC1D23)" required>
+
+<select id="servico" required>
+<option value="">Selecione o serviço</option>
+<option value="VistoriaCompleta">
+Vistoria Cautelar Completa - R$ 399,00 🔥 MAIS ESCOLHIDO
+</option>
+<option value="VistoriaBasica">
+Vistoria Cautelar Básica - R$ 299,00
+</option>
+<option value="ConsultaAte100k">
+Consulta de Histórico (FIPE até R$ 100.000) - R$ 150,00
+</option>
+<option value="ConsultaAcima100k">
+Consulta de Histórico (FIPE acima de R$ 100.000) - R$ 180,00
+</option>
+</select>
+
+<select id="cidade" required>
+<option value="">Selecione a cidade</option>
+</select>
+
+<button type="submit">Quero analisar esse veículo agora</button>
+
+<p style="text-align:center; font-size:12px; color:#777; margin-top:10px;">
+🔒 Seus dados estão seguros e não serão compartilhados.
+</p>
+
+</form>
+
+</div>
+</section>
+
+<section class="contatos">
+<div class="contatos__container">
+
+<div class="contato-item">
+<strong>📱 NOSSO WHATSAPP</strong>
+<a href="https://wa.me/5551992598666?text=Olá! Quero avaliar um veículo." target="_blank">
+(51) 99259-8666
+</a>
+</div>
+
+<div class="contato-item">
+<strong>✉️ NOSSO EMAIL</strong>
+<a href="mailto:portoalegre@checkfastvistorias.com.br">
+portoalegre@checkfastvistorias.com.br
+</a>
+</div>
+
+<div class="contato-item">
+<strong>📸 NOS SIGA NO INSTAGRAM</strong>
+<a href="https://www.instagram.com/check_fastpoa/" target="_blank">
+@checkfastvistorias
+</a>
+</div>
+
+</div>
+</section>
+
+<footer class="footer">© 2026 - CheckFast</footer>
+
+<script src="./script.js"></script>
+
+</body>
+</html>
