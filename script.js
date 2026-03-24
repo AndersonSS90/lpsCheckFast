@@ -119,11 +119,11 @@ function mudarEtapa(direcao){
 }
 
 /*
-Exemplo de Depoimento em aúdio
+Exemplo de Depoimento em vídeo
 
 {
-  tipo:    "audio",
-  arquivo: "./depoimento2.mp3",
+  tipo: "video",
+  arquivo: "./depoimento1.mp4",
   texto:   "Descobri que o carro tinha passagem por leilão antes de comprar.",
   cliente: "- Mariana Souza"
 }
@@ -131,8 +131,8 @@ Exemplo de Depoimento em aúdio
 
 const depoimentos = [
   {
-    tipo: "video",
-    arquivo: "./depoimento1.mp4",
+    tipo: "audio",
+    arquivo: "./depoimento1.mp3",
     texto: "Cara queria aproveitar e te dar parabéns pelo serviço, foi bem atencioso. Nunca te esquivou de nada.",
     cliente: "- João Pereira"
   }
