@@ -275,10 +275,15 @@ document.getElementById("formVistoria").addEventListener("submit", function(e){
     cidade
   };
 
-  fetch("https://script.google.com/macros/s/AKfycbyR49dIXT631_-9XcOn__BCtNyr4vUchqJFhgi1YuyJ24xEMi1H1pMhhjAaPkaKcDbO/exec", { method: "POST", mode: "no-cors", body: JSON.stringify(data)}).then(() => { document.getElementById("formVistoria").reset(); });
-
-  sessionStorage.setItem("dadosFormulario", JSON.stringify(data));
-
-  window.location.href = "./sucesso.html";
-
+  fetch(
+    "https://script.google.com/macros/s/AKfycbyR49dIXT631_-9XcOn__BCtNyr4vUchqJFhgi1YuyJ24xEMi1H1pMhhjAaPkaKcDbO/exec",
+    {
+      method: "POST",
+      mode: "no-cors",
+      body: JSON.stringify(data)
+    }).then(() => {
+      document.getElementById("formVistoria").reset();
+      sessionStorage.setItem("dadosFormulario", JSON.stringify(data));
+      window.location.href = "./sucesso.html";
+    });
 });
