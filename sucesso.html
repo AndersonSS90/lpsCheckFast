@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solicitação recebida - CheckFast</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+<header class="header">
+  <img src="./logo.png" class="header__logo">
+  <p class="header__cidade">Porto Alegre</p>
+</header>
+
+<section class="section" style="text-align:center; background:#fff;">
+
+  <h1 style="font-size:32px; margin-bottom:20px;">
+    ✅ Solicitação enviada com sucesso!
+  </h1>
+
+  <p style="max-width:600px; margin:0 auto 30px auto; font-size:18px;">
+    Recebemos seus dados e nossa equipe já vai entrar em contato contigo.
+    Agora é só aguardar — ou acelerar o atendimento clicando abaixo 👇
+  </p>
+
+  <a 
+    href="#"
+    id="btnWhatsapp"
+    target="_blank"
+    style="
+      display:inline-block;
+      background:#001318;
+      color:#fff;
+      padding:16px 24px;
+      border-radius:8px;
+      text-decoration:none;
+      font-weight:bold;
+      margin-bottom:20px;
+    "
+  >
+    🚀 Falar no WhatsApp agora
+  </a>
+
+  <p style="font-size:14px; color:#666;">
+    ⏱️ Tempo médio de resposta: até 5 minutos em horário comercial
+  </p>
+
+</section>
+
+<section class="section" style="background:#f5f5f5; text-align:center;">
+  <h2>Enquanto isso, olha isso 👇</h2>
+
+  <p style="max-width:600px; margin:20px auto;">
+    Mais de <strong>30% dos veículos possuem problemas ocultos</strong>.
+    Tu já deu o primeiro passo pra não cair nessa.
+  </p>
+
+  <a href="index.html" class="btn-intro">
+    Voltar para o site
+  </a>
+</section>
+
+<footer class="footer">© 2026 - CheckFast</footer>
+
+<script>
+  const dados = JSON.parse(sessionStorage.getItem("dadosFormulario"));
+
+  const botao = document.getElementById("btnWhatsapp");
+
+  botao.addEventListener("click", function(e){
+    if(!dados){
+      alert("Não encontramos seus dados. Por favor, preencha o formulário novamente.");
+      return;
+    }
+  
+    const mensagem = 
+`Olá! Acabei de preencher o formulário 🚗
+
+👤 Nome: ${dados.nome}
+📞 Telefone: ${dados.telefone}
+📧 Email: ${dados.email}
+🚘 Placa: ${dados.placa}
+🔧 Serviço: ${dados.servico}
+📍 Cidade: ${dados.cidade}`;
+
+    const mensagemFormatada = encodeURIComponent(mensagem);
+
+    const link = `https://wa.me/5551992598666?text=${mensagemFormatada}`;
+
+    // atualiza o botão
+    const botao = document.querySelector("a[href*='wa.me']");
+    botao.href = link;
+  });
+</script>
+
+</body>
+</html>

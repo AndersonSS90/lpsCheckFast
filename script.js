@@ -277,29 +277,8 @@ document.getElementById("formVistoria").addEventListener("submit", function(e){
 
   fetch("https://script.google.com/macros/s/AKfycbyR49dIXT631_-9XcOn__BCtNyr4vUchqJFhgi1YuyJ24xEMi1H1pMhhjAaPkaKcDbO/exec", { method: "POST", mode: "no-cors", body: JSON.stringify(data)}).then(() => { document.getElementById("formVistoria").reset(); });
 
-  const mensagem = 
-`Olá! Quero analisar um veículo 🚗
+  sessionStorage.setItem("dadosFormulario", JSON.stringify(data));
 
-👤 Nome: ${nome}
-📞 Telefone: ${telefone}
-📧 Email: ${email}
-🚘 Placa: ${placa}
-🔧 Serviço: ${servico}
-📍 Cidade: ${cidade}`;
+  window.location.href = "./sucesso.html";
 
-  const mensagemFormatada = encodeURIComponent(mensagem);
-
-  const numero = "5551992598666";
-
-  window.open(`https://wa.me/${numero}?text=${mensagemFormatada}`, "_blank");
-
-  const botao = document.querySelector("#formVistoria button");
-
-  botao.disabled = true;
-  botao.innerText = "Abrindo WhatsApp...";
-
-  setTimeout(() => {
-    botao.disabled = false;
-    botao.innerText = "Quero analisar esse veículo agora";
-  }, 3000);
 });
