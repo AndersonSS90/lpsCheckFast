@@ -119,10 +119,10 @@ function mudarEtapa(direcao){
 }
 
 /*
-Exemplo de Depoimento em vídeo
+Exemplo de Depoimento em Vídeo
 
 {
-  tipo: "video",
+  tipo:    "video",
   arquivo: "./depoimento1.mp4",
   texto:   "Descobri que o carro tinha passagem por leilão antes de comprar.",
   cliente: "- Mariana Souza"
@@ -156,12 +156,10 @@ function atualizarDepoimento(){
     elemento = document.createElement("video");
     elemento.src = depo.arquivo;
     elemento.controls = true;
-    elemento.style.borderRadius = "6px";
   } else {
     elemento = document.createElement("audio");
     elemento.src = depo.arquivo;
     elemento.controls = true;
-    elemento.style.width = "100%";
   }
 
   // 👉 aqui vamos controlar o autoplay (próximo passo)
