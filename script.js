@@ -275,6 +275,13 @@ document.getElementById("formVistoria").addEventListener("submit", function(e){
     cidade
   };
 
+  const form = document.getElementById("formVistoria");
+  const botao = form.querySelector("button[type='submit']");
+
+  botao.disabled = true;
+  const textoOriginal = botao.innerText;
+  botao.innerText = "Enviando solicitação...";
+  
   fetch(
     "https://script.google.com/macros/s/AKfycbyR49dIXT631_-9XcOn__BCtNyr4vUchqJFhgi1YuyJ24xEMi1H1pMhhjAaPkaKcDbO/exec",
     {
@@ -285,5 +292,12 @@ document.getElementById("formVistoria").addEventListener("submit", function(e){
       document.getElementById("formVistoria").reset();
       sessionStorage.setItem("dadosFormulario", JSON.stringify(data));
       window.location.href = "./sucesso.html";
-    });
+    }
+  );
+
+  setTimeout(() => {
+    botao.disabled = false;
+    botao.innerText = textoOriginal;
+  }, 3000);
+  
 });
