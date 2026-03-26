@@ -134,7 +134,7 @@ const depoimentos = [
     tipo: "audio",
     arquivo: "./depoimento1.mp3",
     texto: "Cara queria aproveitar e te dar parabéns pelo serviço, foi bem atencioso. Nunca te esquivou de nada.",
-    cliente: "- João Pereira"
+    cliente: "- Alexandre"
   }
 ];
 
