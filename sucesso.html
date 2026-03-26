@@ -69,12 +69,7 @@
 
   const botao = document.getElementById("btnWhatsapp");
 
-  botao.addEventListener("click", function(e){
-    if(!dados){
-      alert("Não encontramos seus dados. Por favor, preencha o formulário novamente.");
-      return;
-    }
-  
+  if(dados){
     const mensagem = 
 `Olá! Acabei de preencher o formulário 🚗
 
@@ -89,9 +84,14 @@
 
     const link = `https://wa.me/5551992598666?text=${mensagemFormatada}`;
 
-    // atualiza o botão
-    const botao = document.querySelector("a[href*='wa.me']");
     botao.href = link;
+  }
+
+  botao.addEventListener("click", function(e){
+    if(!dados){
+      alert("Não encontramos seus dados. Por favor, preencha o formulário novamente.");
+      return;
+    }
   });
 </script>
 
