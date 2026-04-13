@@ -35,8 +35,8 @@ e confiáveis para evitar surpresas e trazer mais tranquilidade para cada negoci
 </p>
 
 <div class="intro__botoes">
-<a href="#servicos" class="btn-intro">Ver serviços</a>
-<a href="#form-vistoria" class="btn-intro btn-intro--outline">Quero analisar meu veículo</a>
+<a id="introServicoes" href="#servicos" class="btn-intro">Ver serviços</a>
+<a id="introForm" href="#form-vistoria" class="btn-intro btn-intro--outline">Quero analisar meu veículo</a>
 </div>
 
 </div>
@@ -50,8 +50,8 @@ e confiáveis para evitar surpresas e trazer mais tranquilidade para cada negoci
 <h3 class="card__titulo">Consulta de Histórico Veicular</h3>
 <p class="card__texto">A Consulta de Histórico Veicular reúne dados essenciais sobre o passado do veículo: multas, restrições, registro de roubo ou furto, passagem por leilão, possíveis acidentes, alienação e valor na Tabela FIPE. É o primeiro passo para avaliar riscos e comprar com mais segurança.</p>
 <div class="botoes-servico">
-<a onclick="abrirModal('consulta')" class="card__botao">Saiba Mais</a>
-<a href="#form-vistoria" class="card__botao cta-botao" data-servico="ConsultaAte100k">Descobrir histórico do veículo</a>
+<a id="servicoConsultaModal" onclick="abrirModal('consulta')" class="card__botao">Saiba Mais</a>
+<a id="servicoConsultaForm" href="#form-vistoria" class="card__botao cta-botao" data-servico="ConsultaAte100k">Descobrir histórico do veículo</a>
 </div>
 </div>
 <div class="servico-imagem">
@@ -63,8 +63,8 @@ e confiáveis para evitar surpresas e trazer mais tranquilidade para cada negoci
 <h3 class="card__titulo">Vistoria Cautelar Básica</h3>
 <p class="card__texto">A Vistoria Cautelar Básica vai além do histórico e analisa a identificação e estrutura do veículo. São verificados chassi, motor, vidros, airbags, freios e indícios de sinistros, leilões ou restrições, gerando um laudo fotográfico que aumenta a segurança na compra ou venda.</p>
 <div class="botoes-servico">
-<a onclick="abrirModal('cautelar')" class="card__botao">Saiba Mais</a>
-<a href="#form-vistoria" class="card__botao cta-botao" data-servico="VistoriaBasica">Quero avaliar esse carro</a>
+<a id="servicoCautelarModal" onclick="abrirModal('cautelar')" class="card__botao">Saiba Mais</a>
+<a id="servicoCautelarForm" href="#form-vistoria" class="card__botao cta-botao" data-servico="VistoriaBasica">Quero avaliar esse carro</a>
 </div>
 </div>
 <div class="servico-imagem">
@@ -76,8 +76,8 @@ e confiáveis para evitar surpresas e trazer mais tranquilidade para cada negoci
 <h3 class="card__titulo">Vistoria Cautelar Completa</h3>
 <p class="card__texto">A Vistoria Cautelar Completa inclui tudo da vistoria básica e acrescenta análise detalhada da pintura e da carroceria. O processo identifica retoques, repinturas ou reparos estruturais, oferecendo um diagnóstico mais profundo e máxima transparência na negociação do veículo.</p>
 <div class="botoes-servico">
-<a onclick="abrirModal('completa')" class="card__botao">Saiba Mais</a>
-<a href="#form-vistoria" class="card__botao cta-botao" data-servico="VistoriaCompleta">Descobrir tudo antes de comprar</a>
+<a id="servicoCompletaModal" onclick="abrirModal('completa')" class="card__botao">Saiba Mais</a>
+<a id="servicoCompletaForm" href="#form-vistoria" class="card__botao cta-botao" data-servico="VistoriaCompleta">Descobrir tudo antes de comprar</a>
 </div>
 </div>
 <div class="servico-imagem">
@@ -219,7 +219,7 @@ Consulta de Histórico (FIPE acima de R$ 100.000) - R$ 180,00
 <select id="cidade" required>
 <option value="">Selecione a cidade</option>
 </select>
-<button type="submit">Quero analisar esse veículo agora</button>
+<button id="formSubmit" type="submit">Quero analisar esse veículo agora</button>
 <p style="text-align:center; font-size:12px; color:#777; margin-top:10px;">
 🔒 Seus dados estão seguros e não serão compartilhados.
 </p>
@@ -233,21 +233,21 @@ Consulta de Histórico (FIPE acima de R$ 100.000) - R$ 180,00
 
 <div class="contato-item">
 <strong>📱 NOSSO WHATSAPP</strong>
-<a href="https://wa.me/5551992598666?text=Olá! Quero avaliar um veículo." target="_blank">
+<a id="footerWhats" href="https://wa.me/5551992598666?text=Olá! Quero avaliar um veículo." target="_blank">
 (51) 99259-8666
 </a>
 </div>
 
 <div class="contato-item">
 <strong>✉️ NOSSO EMAIL</strong>
-<a href="mailto:portoalegre@checkfastvistorias.com.br">
+<a id="footerEmail" href="mailto:portoalegre@checkfastvistorias.com.br">
 portoalegre@checkfastvistorias.com.br
 </a>
 </div>
 
 <div class="contato-item">
 <strong>📸 NOS SIGA NO INSTAGRAM</strong>
-<a href="https://www.instagram.com/check_fastpoa/" target="_blank">
+<a id="footerSocial" href="https://www.instagram.com/check_fastpoa/" target="_blank">
 @checkfastvistorias
 </a>
 </div>
